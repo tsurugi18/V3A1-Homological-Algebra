@@ -129,37 +129,7 @@ mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 
 The injectivity of $f\circ$ and $\circ g$ follows from set theory as $f$ is injective and $g$ is surjective. The exactness at the middle follows from that the original sequence is exact.
 \par\textbf{Exercise 2}
-The commutativity tells us that 
-\begin{equation*}
-    \psi\circ f = g\circ \phi.
-\end{equation*}
-This means 
-\begin{equation*}
-    \ker f\subseteq\ker g\circ\phi.
-\end{equation*}
-Thus we obtain 
-\begin{equation*}
-    \phi(\ker f)\subseteq\ker g.
-\end{equation*}
-Similarly for the cokernel. 
-\begin{equation*}
-    \psi(\image f)\subset\image g.
-\end{equation*}
-Thus $b+\image f\mapsto \psi(b)+\image g$ is well-defined.
-\par Alternatively, we can use the universal properties of $\ker$ and $\coker$ which are 
-\begin{center}
-    \begin{tikzcd}
-C \arrow[r] \arrow[rr, "0", bend left=49] \arrow[rd, "\exists!"', dotted] & A \arrow[r, "f"]                  & B & A \arrow[rd, "0"'] \arrow[r, "f"] \arrow[rr, "0", bend left=49] & B \arrow[r] \arrow[d]                    & C \\
-                                                                          & \ker f \arrow[u] \arrow[ru, "0"'] &   &                                                                 & \coker f \arrow[ru, "\exists!"', dotted] &  
-\end{tikzcd}
-\end{center}
-\begin{center}
-\begin{tikzcd}
-\ker f \arrow[r] \arrow[rdd, "\exists !", dotted] & A \arrow[d] \arrow[r]       & B \arrow[d] \arrow[r] & \coker f \arrow[d, "\exists !", dotted] \\
-                                                  & C \arrow[r]                 & D \arrow[r]           & \coker g                                \\
-                                                  & \ker g \arrow[u] \arrow[ru] &                       &                                        
-\end{tikzcd}
-\end{center}
+
 \par\textbf{Exercise 3}
 We have a commutative diagram,
 \begin{center}
