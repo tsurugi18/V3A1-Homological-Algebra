@@ -1,0 +1,182 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ mathrsfs }
+\usepackage{ mathtools}
+\usepackage{enumerate}
+\usepackage{bbm}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{tikz-cd} 
+\usepackage{adjustbox} 
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+\tikzset{commutative diagrams/.cd,
+mysymbol/.style={start anchor=center,end anchor=center,draw=none}
+}
+\newcommand\comsymb[2][\circlearrowleft]{%
+  \arrow[mysymbol]{#2}[description]{#1}}
+
+\newtheorem{theorem}{Theorem} [section] 
+\newtheorem{proposition}{Proposition}[section] 
+\newtheorem{definition}{Definition}[section] 
+\newtheorem{lemma}{Lemma}[section] 
+\newtheorem{notation}{Notation}[section] 
+\newtheorem{remark}{Remark}[section] 
+\newtheorem{corollary}{Corollary} [section] 
+\newtheorem{terminology}{Terminology}[section] 
+\newtheorem{fact}{Fact}[section] 
+\newtheorem{example}{Example}[section] 
+\newtheorem{claim}{Claim}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\blacksquare$}
+
+\DeclareMathOperator{\tmod}{mod}
+\DeclareMathOperator{\triv}{triv}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\straw}{s.t.}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\esssup}{esssup}
+\DeclareMathOperator{\abs}{abs}
+\DeclareMathOperator{\rel}{rel}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Homk}{Hom_{k-alg}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\divergence}{div}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\mSpec}{mSpec}
+\DeclareMathOperator{\MaxSpec}{MaxSpec}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\PD}{PD}
+\DeclareMathOperator{\ext}{ext}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\diverg}{div}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\dR}{dR}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Mnfd}{Mnfd}
+\DeclareMathOperator{\OpEmb}{OpEmb}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spa}{Spa}
+%\newcommand*{\name}[\num_arguments][default values]{{\color{#1}\Large #2}}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\Ouv}{\mathcal{O}}
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\opNorm}[2]{\norm{#1}_{#2\to#2}}
+\newcommand{\normL}[3]{\norm{#1}_{L^{#2}(#3)}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\m}[0]{\mathfrak{m}}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\F}[0]{\mathbb{F}}
+\newcommand{\G}[0]{\mathbb{G}}
+\newcommand{\A}[0]{\mathbb{A}}
+\newcommand{\T}[0]{\mathbb{T}}
+\newcommand{\Para}[0]{\mathbb{P}}
+\newcommand{\M}[0]{\mathcal{M}}
+\newcommand{\maniN}[0]{\mathcal{N}}
+\newcommand{\cinf}[0]{\mathcal{C}^\infty}
+\newcommand{\torus}[0]{\mathbb{T}}
+\newcommand{\sep}[0]{\:|\:}
+\newcommand{\pd}[2]{{\frac {\partial #1} {\partial #2}}}
+\newcommand{\compinc}[0]{\subset \subset}
+\newcommand{\sH}[0]{\mathscr{H}}
+\newcommand{\ab}[1]{\vert #1 \vert}
+\newcommand{\st}[0]{\:\straw\:}
+\newcommand{\fib}[1]{%
+  \mathbin{\mathop{\times}\limits_{#1}}%
+}
+\newcommand{\tens}[1]{%
+  \mathbin{\mathop{\otimes}\displaylimits_{#1}}%
+}
+
+\title{Homological Algebra Week0 Solutions}
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+%4/14
+
+\par\textbf{Exercise 1}
+
+\begin{theorem}
+    Any finitely generated abelian group $A$ is isomorphic to 
+    \begin{equation*}
+        \Z^r\oplus\bigoplus_{i=1}^q\Z/n_i\Z.
+    \end{equation*}
+\end{theorem}
+Using this we have a short exact sequence,
+\begin{center}
+    \begin{tikzcd}
+0 \arrow[r] & \bigoplus_{i=1}^q n_i\Z \arrow[r] & \Z^{r+q} \arrow[r] & A \arrow[r] & 0
+\end{tikzcd}
+\end{center}
+The injectivity of the map is due to that a direct sum of injective maps are again injective. Similarly for the surjectivity. Furthermore, $\image,\ker$ commutes with direct sums. Thus the exactness at the middle follows.
+\par\textbf{Exercise 2}
+The commutativity tells us that 
+\begin{equation*}
+    \psi\circ f = g\circ \phi.
+\end{equation*}
+This means 
+\begin{equation*}
+    \ker f\subseteq\ker g\circ\phi.
+\end{equation*}
+Thus we obtain 
+\begin{equation*}
+    \phi(\ker f)\subseteq\ker g.
+\end{equation*}
+Similarly for the cokernel. 
+\begin{equation*}
+    \psi(\image f)\subset\image g.
+\end{equation*}
+Thus $b+\image f\mapsto \psi(b)+\image g$ is well-defined.
+\par Alternatively, we can use the universal properties of $\ker$ and $\coker$ which are 
+\begin{center}
+    \begin{tikzcd}
+C \arrow[r] \arrow[rr, "0", bend left=49] \arrow[rd, "\exists!"', dotted] & A \arrow[r, "f"]                  & B & A \arrow[rd, "0"'] \arrow[r, "f"] \arrow[rr, "0", bend left=49] & B \arrow[r] \arrow[d]                    & C \\
+                                                                          & \ker f \arrow[u] \arrow[ru, "0"'] &   &                                                                 & \coker f \arrow[ru, "\exists!"', dotted] &  
+\end{tikzcd}
+\end{center}
+\begin{center}
+\begin{tikzcd}
+\ker f \arrow[r] \arrow[rdd, "\exists !", dotted] & A \arrow[d] \arrow[r]       & B \arrow[d] \arrow[r] & \coker f \arrow[d, "\exists !", dotted] \\
+                                                  & C \arrow[r]                 & D \arrow[r]           & \coker g                                \\
+                                                  & \ker g \arrow[u] \arrow[ru] &                       &                                        
+\end{tikzcd}
+\end{center}
+\par\textbf{Exercise 3}
+Suppose $A\oplus B\cong C$. Then we have a map,
+\begin{equation*}
+    \iota_A:A\to C,\iota_B:B\to C, \rho_A:C\to A,\rho_B:C\to B
+\end{equation*}
+which are canonical injections and surjections and these clearly satisfy the given conditions.
+\par For the other direction, set $\phi:A\oplus B\to C$ as $\phi = (\iota_A,\iota_B)$ and $\psi:C\to A\oplus B$ as $\psi=(\rho_A,\rho_B)$. They are direct sums of homomorphisms of groups and their compositions are identities due to the given properties. Thus we conclude $A\oplus B\cong C$.
+\end{document}
