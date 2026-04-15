@@ -154,4 +154,19 @@ From Exercise 3 of Week 0 sheet, we have,
 \end{tikzcd}
 \end{center}
 Thus the map $H_n(f):H_n(A_\bullet)\to H_n(B_\bullet)$ is given by restricting the domain of $\coker d_{k+1}^A\to\coker d_{k+1}^B$ to $H_n(A_\bullet)$.
+\par Consider, $f_\bullet:A_\bullet\to B_\bullet$ such that
+\begin{center}
+    \begin{tikzcd}
+A_\bullet : &0 \arrow[r] \arrow[d] & \Z \arrow[r, "\times 2"] \arrow[d, "\times 0"] & \Z \arrow[r] \arrow[d, "\mod{2}"] & 0 \arrow[d] \\
+B_\bullet : &0 \arrow[r]           & 0 \arrow[r, hook]                              & \Z/2\Z \arrow[r]                  & 0          
+\end{tikzcd}
+\end{center}
+Then
+\begin{center}
+    \begin{tikzcd}
+0 \arrow[r] \arrow[d] & \Z/2\Z \arrow[r] \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r]           & \Z/2\Z \arrow[r]           & 0          
+\end{tikzcd}
+\end{center}
+In the construction of $H_\bullet(f)$ in the beginning, $\Z/2\Z\to\Z/2\Z$ is not non-zero thus an isomorphism. Since the only possible group homomorphism from $\Z/2\Z\to\Z$ is $0$. Thus if $H_\bullet(f)$ is quasi-isomorphism, there wouldn't be any quasi-inverse.
 \end{document}

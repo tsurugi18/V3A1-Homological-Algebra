@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=latex 2025.10.19)  15 APR 2026 05:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=latex 2025.10.19)  15 APR 2026 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -496,19 +496,21 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 [1
 
-] (./V3A1Week1.aux)
+]
+
+[2] (./V3A1Week1.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17032 strings out of 473191
- 356406 string characters out of 5715825
- 851048 words of memory out of 5000000
- 39980 multiletter control sequences out of 15000+600000
+ 17214 strings out of 473191
+ 361096 string characters out of 5715825
+ 876557 words of memory out of 5000000
+ 40162 multiletter control sequences out of 15000+600000
  566777 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,13n,121p,582b,986s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on V3A1Week1.dvi (1 page, 27672 bytes).
+Output written on V3A1Week1.dvi (2 pages, 41152 bytes).
