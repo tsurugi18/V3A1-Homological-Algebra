@@ -81,6 +81,7 @@ mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 \DeclareMathOperator{\OpEmb}{OpEmb}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Ab}{Ab}
 %\newcommand*{\name}[\num_arguments][default values]{{\color{#1}\Large #2}}
 \newcommand{\defeq}{\vcentcolon=}
 \newcommand{\Ouv}{\mathcal{O}}
@@ -127,9 +128,16 @@ mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 
 \par\textbf{Exercise 1}
 
-The injectivity of $f\circ$ and $\circ g$ follows from set theory as $f$ is injective and $g$ is surjective. The exactness at the middle follows from that the original sequence is exact.
-\par\textbf{Exercise 2}
-
+For any map $\varphi,\psi$ where compositions $f\circ \varphi,f\circ\psi$ make sense, we have if $f$ is injective then $f\circ\phi=f\circ\psi$ implies $\phi=\psi$ as maps between sets. Thus the morphism $f\circ$ is injective. Similarly, as $g$ is surjective $\circ g$ is an injective morphism. For the exactness as $g\circ f = 0$ the inclusion,
+\begin{equation*}
+    \image  f\circ \subseteq \ker g\circ
+\end{equation*}
+is clear. If $\varphi:X\to B\in\ker g\circ$ then $\image\varphi\subseteq\ker g = \image f$. Thus we can assume $B=\image f$, namely $f$ is bijective. Set $\varphi' = f^{-1}\circ\varphi$. This is in $\Hom_{\Ab}(X,A)$ and $f\circ \varphi' = f\circ f^{-1}\circ\varphi = \varphi$. 
+\par For the other case, by similar argument, we have,
+\begin{equation*}
+    \image \circ g \subseteq\ker \circ f.
+\end{equation*}
+Let $\psi\in\ker\circ f$. Similarly, $\ker \psi \supseteq\image f = \ker g$. Thus we consider $B/\ker g$ instead of $g$. This make $g$ bijective, therefore set $\psi' = \psi\circ g^{-1}\in\Hom_{\Ab}(C,X)$.
 \par\textbf{Exercise 3}
 We have a commutative diagram,
 \begin{center}
@@ -138,5 +146,12 @@ We have a commutative diagram,
 \cdots \arrow[r] & B_k \arrow[r, "d_k^B"']                 & B_{k-1} \arrow[r]                      & \cdots
 \end{tikzcd}
 \end{center}
-From Exercise 3 of Week 0 sheet, $f$ preserves cycles and boundaries.
+From Exercise 3 of Week 0 sheet, we have,
+\begin{center}
+    \begin{tikzcd}
+\ker d_k^A \arrow[r] \arrow[d, "f_k'"] & A_k \arrow[r, "d_k"] \arrow[d, "f_k"] & A_{k-1} \arrow[r] \arrow[d, "f_{k-1}"] & \coker d_k^A \arrow[d, "f_{k-1}'"] \\
+\ker d_k^B \arrow[r]                   & B_k \arrow[r, "d_k"']                 & B_{k-1} \arrow[r]                      & \coker d_k^B                      
+\end{tikzcd}
+\end{center}
+Thus the map $H_n(f):H_n(A_\bullet)\to H_n(B_\bullet)$ is given by restricting the domain of $\coker d_{k+1}^A\to\coker d_{k+1}^B$ to $H_n(A_\bullet)$.
 \end{document}
